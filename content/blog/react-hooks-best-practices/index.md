@@ -14,8 +14,6 @@ Alright, we identified that we may encounter some performance issues while using
 
 Essentially, most of the issues with Hooks come from unnecessary renders of your components. Have a look at the following example:
 
-https://dfdffв
-
 https://codesandbox.io/s/incrementor-46w3y?fontsize=14&hidenavigation=1&theme=dark
 
 This is a component that has two states, A and B, and four increment actions on them. I’ve added the `console.log` method to see the message on every render. The first two actions are basic increments and just increase A or B values by one.
