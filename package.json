@@ -1,14 +1,14 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "lyamkin.com",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "Personal website by Ilya Lyamkin",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Ilya Lyamkin <ilya.lyamkin@gmail.com>",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/ilyamkin/lyamkin.com/issues"
   },
   "dependencies": {
-    "gatsby": "^2.17.6",
+    "gatsby": "^2.19.12",
     "gatsby-image": "^2.2.30",
     "gatsby-plugin-feed": "^2.3.19",
     "gatsby-plugin-google-analytics": "^2.1.23",
@@ -18,6 +18,7 @@
     "gatsby-plugin-sharp": "^2.2.34",
     "gatsby-plugin-typography": "^2.3.15",
     "gatsby-remark-copy-linked-files": "^2.1.28",
+    "gatsby-remark-embedder": "^1.11.0",
     "gatsby-remark-images": "^3.1.28",
     "gatsby-remark-prismjs": "^3.3.20",
     "gatsby-remark-responsive-iframe": "^2.2.25",
@@ -26,8 +27,8 @@
     "gatsby-transformer-remark": "^2.6.32",
     "gatsby-transformer-sharp": "^2.3.1",
     "prismjs": "^1.17.1",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
     "react-typography": "^0.16.19",
     "typeface-merriweather": "0.0.72",
@@ -38,15 +39,12 @@
   "devDependencies": {
     "prettier": "^1.18.2"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
-  "keywords": [
-    "gatsby"
-  ],
+  "homepage": "https://lyamkin.com",
   "license": "MIT",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/ilyamkin/lyamkin.com.git"
   },
   "scripts": {
     "build": "gatsby build",
