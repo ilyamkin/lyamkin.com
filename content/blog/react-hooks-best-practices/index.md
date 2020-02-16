@@ -1,6 +1,6 @@
 ---
 title: Adventuring Into React Hooks Performance Practices
-date: "2019-11-07T00:00:00.000Z"
+date: "2019-10-18T00:00:00.000Z"
 ---
 
 From version 16.8.0, React introduced us to a way to use state and other React features without writing a class — [React Hooks](kcd-scripts validate).

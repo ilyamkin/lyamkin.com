@@ -46,7 +46,7 @@ class Layout extends React.Component {
             >
               About
             </Link>
-            <a href='/resume.pdf' download>
+            <a href='/resume.pdf' target="_blank" rel="noopener noreferrer">
               CV
             </a>
           </div>

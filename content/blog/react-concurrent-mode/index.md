@@ -1,6 +1,6 @@
 ---
 title: Implementing the Prefetch Pattern in React Concurrent Mode
-date: "2019-11-05T00:00:00.000Z"
+date: "2019-11-04T00:00:00.000Z"
 description: What is React Concurrent Mode and how it can help building responsive webapps
 ---
 

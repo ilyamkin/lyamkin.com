@@ -1,6 +1,6 @@
 ---
 title: You Might Not Need Controlled Components
-date: "2019-11-27T00:00:00.000Z"
+date: "2019-10-01T00:00:00.000Z"
 ---
 
 If you'll go to the official React website it says that [the recommended way to use inputs is to control them via React state](https://reactjs.org/docs/uncontrolled-components.html). It also mentions that in some cases you can go with an uncontrolled option but do not say what are these cases explicitly. Let’s try to dive into it and see the pros and cons of this approach.
