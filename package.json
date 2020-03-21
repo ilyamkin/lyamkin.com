@@ -8,12 +8,13 @@
     "url": "https://github.com/ilyamkin/lyamkin.com/issues"
   },
   "dependencies": {
-    "gatsby": "^2.19.12",
+    "gatsby": "^2.20.2",
     "gatsby-image": "^2.2.30",
     "gatsby-plugin-feed": "^2.3.19",
     "gatsby-plugin-google-analytics": "^2.1.23",
     "gatsby-plugin-manifest": "^2.2.25",
     "gatsby-plugin-offline": "^3.0.17",
+    "gatsby-plugin-postcss": "^2.2.0",
     "gatsby-plugin-react-helmet": "^3.1.13",
     "gatsby-plugin-sharp": "^2.2.34",
     "gatsby-plugin-typography": "^2.3.15",
@@ -37,7 +38,8 @@
     "typography-theme-wordpress-2016": "^0.16.19"
   },
   "devDependencies": {
-    "prettier": "^1.18.2"
+    "prettier": "^1.18.2",
+    "tailwindcss": "^1.2.0"
   },
   "homepage": "https://lyamkin.com",
   "license": "MIT",
