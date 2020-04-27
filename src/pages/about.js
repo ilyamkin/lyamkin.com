@@ -29,8 +29,8 @@ class NotFoundPage extends React.Component {
             , and <a href="https://www.t-systems.com/de/en" target="_blank" rel="noopener noreferrer">T-Systems</a>.
         </p>
         <p>
-            Occasionally I write about Web Development on various platforms including
-            : <a href="https://twitter.com/ilyamkin">Twitter</a>, <a href="https://medium.com/@ilyamkin" target="_blank" rel="noopener noreferrer">Medium</a>
+            Occasionally I write about Web Development on various platforms including:
+            {' '}<a href="https://twitter.com/ilyamkin">Twitter</a>, <a href="https://medium.com/@ilyamkin" target="_blank" rel="noopener noreferrer">Medium</a>
             , <a href="https://dev.to/ilyamkin" target="_blank" rel="noopener noreferrer">dev.to</a>.
         </p>
       </Layout>

@@ -115,7 +115,7 @@ We always return `Promise`, so clients can chain requests together or wait for t
 
 ## Step 5. Testing
 
-Most of the code in API client is integration with third-party endpoints. To make testing easier we can utilize the [Nock](https://github.com/nock/nock) library that conveniently mocks HTTP server for you.
+Most of the code in API client is integration with third-party endpoints. To make testing easier we can utilize the [Nock](https://github.com/nock/nock) library that conveniently mocks HTTP server for us.
 
 ```js
 describe('Article resource', () => {
@@ -139,7 +139,7 @@ In the example above we set up the mock, then make the request and finally check
 
 ## Conclusion
 
-Together we designed an API client that small, scalable, supports Typescript out-of-the-box, and works in browser and in Node.js.
+Together we designed an API client that is small, scalable, supports Typescript out-of-the-box, and works in browser and in Node.js.
 
 
 I invite everyone to check out the [repository](https://github.com/ilyamkin/dev-to-js) to collaborate and improve the library. If you ever wanted to be a maintainer of an open-source library, this is something I'd be open to help.
