@@ -1,18 +1,11 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
 import "./bio.css"
+import profilePic from "../../content/assets/profile-pic.jpg"
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
     query BioQuery {
-      avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
-        childImageSharp {
-          fixed(width: 400, height: 400) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
       site {
         siteMetadata {
           author
@@ -26,19 +19,14 @@ const Bio = () => {
 
   const { author } = data.site.siteMetadata
   return (
-    <div
-      className='bio'
-    >
-      <Image
-        fixed={data.avatar.childImageSharp.fixed}
+    <div className='bio'>
+      <img
+        src={profilePic}
         alt={author}
         style={{
           width: 200,
           height: 200,
           borderRadius: `100%`,
-        }}
-        imgStyle={{
-          borderRadius: `50%`,
         }}
       />
       <h1 className="name">Ilya Lyamkin</h1>
