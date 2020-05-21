@@ -1,6 +1,6 @@
 ---
 title: Truly Reusable Design Systems in Practice
-date: "2020-01-02T00:00:00.000Z"
+date: '2020-01-02T00:00:00.000Z'
 description: What makes a great design system — and how can you create your own for your project or company?
 ---
 
@@ -56,56 +56,64 @@ In the `src/components` folder, you’ll find the `my-component` folder. Rename 
 
 ```css
 button {
-    color: #24292e;
-    background-image: linear-gradient(-180deg, #fafbfc 0%, #eff3f6 90%);
-    
-    padding: 6px 12px;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 20px;
-    cursor: pointer;
-    border-radius: 0.25em;
+  color: #24292e;
+  background-image: linear-gradient(-180deg, #fafbfc 0%, #eff3f6 90%);
+
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  cursor: pointer;
+  border-radius: 0.25em;
 }
 ```
 
 Now go to the `tsx` file. This is the actual component we need to build.
 
 ```tsx
-import { Component, Prop, h, Listen, State, Event, EventEmitter } from '@stencil/core';
+import {
+  Component,
+  Prop,
+  h,
+  Listen,
+  State,
+  Event,
+  EventEmitter,
+} from '@stencil/core'
 
 @Component({
   tag: 'fetch-button',
   styleUrl: 'fetch-button.css',
-  shadow: true
+  shadow: true,
 })
 export class MyComponent {
   /**
    * URL to fetch
    */
-  @Prop() url: string;
+  @Prop() url: string
 
   /**
    * The query status
    */
-  @State() status: string;
+  @State() status: string
 
-  @Event() success: EventEmitter;
-  @Event() error: EventEmitter;
+  @Event() success: EventEmitter
+  @Event() error: EventEmitter
 
   @Listen('click', { capture: true })
   handleClick() {
-    this.status = 'pending';
+    this.status = 'pending'
 
     fetch(this.url)
-    .then(response => response.json())
-    .then((data) => {
-      this.success.emit(data)
-      this.status = 'success'
-    })
-    .catch((error) => {
-      this.error.emit(error)
-      this.status = 'error'
-    })
+      .then(response => response.json())
+      .then(data => {
+        this.success.emit(data)
+        this.status = 'success'
+      })
+      .catch(error => {
+        this.error.emit(error)
+        this.status = 'error'
+      })
   }
 
   render() {
@@ -116,7 +124,7 @@ export class MyComponent {
         </button>
         <div>Status: {this.status}</div>
       </div>
-    );
+    )
   }
 }
 ```
@@ -138,30 +146,38 @@ That’s it. Now let’s see how we can use it.
 ```html
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Fetch Button Demo</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Fetch Button Demo</title>
 
-  <script type="module" src="/build/designsystem.esm.js"></script>
-  <script nomodule src="/build/designsystem.js"></script>
+    <script type="module" src="/build/designsystem.esm.js"></script>
+    <script nomodule src="/build/designsystem.js"></script>
 
-  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-</head>
-<body>
+    <script
+      src="https://unpkg.com/react@16/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <fetch-button url="https://jsonplaceholder.typicode.com/todos/1">
+      Fetch my data from vanilla JS
+    </fetch-button>
+    <script>
+      const fetchButton = document.querySelector('fetch-button')
+      fetchButton.addEventListener('success', console.log)
+    </script>
 
-  <fetch-button url="https://jsonplaceholder.typicode.com/todos/1">
-    Fetch my data from vanilla JS
-  </fetch-button>
-  <script>
-    const fetchButton = document.querySelector('fetch-button');
-    fetchButton.addEventListener('success', console.log)
-  </script>
-
-  <div id="root"></div>
-  <script type="text/babel">
+    <div id="root"></div>
+    <script type="text/babel">
       ReactDOM.render(
         <fetch-button
           ref={el => el.addEventListener('success', console.log)}
@@ -172,10 +188,9 @@ That’s it. Now let’s see how we can use it.
           Fetch data from React
         </fetch-button>,
         document.getElementById('root')
-      );
+      )
     </script>
-
-</body>
+  </body>
 </html>
 ```
 
@@ -190,6 +205,7 @@ The most important one is the lack of good framework support. For example, in Re
 As a workaround, you can attach a native event using the `ref` property — which is what I did in the example above. The [Custom Elements Everywhere](https://custom-elements-everywhere.com/) website shows the compatibility Web Components has with popular frameworks.
 
 # Conclusion
+
 Before starting working on the design system, evaluate the values you want to focus on. Maybe you don’t need to have it at all and just properly organized shared components would be enough for you.
 
 If you’ve decided to incorporate the system, Web Components perfectly solves challenges that stand before design systems and is a great technology to build your components upon.

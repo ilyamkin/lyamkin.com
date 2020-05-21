@@ -1,8 +1,8 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react'
+import { Link } from 'gatsby'
 
 const Layout = ({ title, children }) => (
-  <div className='p-0 mx-auto flex flex-col h-full max-w-full sm:px-8'>
+  <div className="p-0 mx-auto flex flex-col h-full max-w-full sm:px-8">
     <header
       className="flex items-center justify-between px-8"
       style={{ minHeight: '4rem' }}
@@ -11,27 +11,24 @@ const Layout = ({ title, children }) => (
         {title}
       </Link>
       <div>
-        <Link className='mr-4' to={`/blog`}>
+        <Link className="mr-4" to={`/blog`}>
           Blog
         </Link>
-        <Link className='mr-4' to={`/about`}>
+        <Link className="mr-4" to={`/about`}>
           About
         </Link>
-        <a href='/resume.pdf' target="_blank" rel="noopener noreferrer">
+        <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
           CV
         </a>
       </div>
     </header>
-    <main
-      className="px-8 flex-1 mx-auto w-full"
-      style={{ maxWidth: '744px' }}
-    >
+    <main className="px-8 flex-1 mx-auto w-full" style={{ maxWidth: '744px' }}>
       {children}
     </main>
     <footer className="mb-4 text-center">
       © {new Date().getFullYear()}, Built with ❤️ at 🌍
     </footer>
   </div>
-);
+)
 
 export default Layout

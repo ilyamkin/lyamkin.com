@@ -1,6 +1,6 @@
 ---
 title: How to Build an API Client Library in JS
-date: "2020-04-27T00:00:00.000Z"
+date: '2020-04-27T00:00:00.000Z'
 description: Introducing the dev-to-js library
 ---
 
@@ -24,6 +24,7 @@ Before jumping into the coding part, let's discuss which language we're going to
 Now let's think where our library is going to be run. Basically, it could a browser or a Node.js server. Why not develop a library that works in both? It'll also make it easier to use it together with server-side rendering where code executed at the server first and then on the client.
 
 ## Step 2. Bundling
+
 Two major differentiators for any library is its size and support of users with old and modern clients. First, we want our size to be as small as possible - API client shouldn't add much weight to the project. Second, the library should have decent browser support by serving the CommonJS bundle for those who cannot support the modern version and at the same time give a modern bundle for clients with newer versions.
 
 The default choice for a web project is [Webpack](https://webpack.js.org/), but our library is fairly small and simple, so I've chosen [Rollup](https://rollupjs.org/guide/en/) as base bundler together with [`microbundle`](https://github.com/developit/microbundle) for easy setup.
@@ -36,12 +37,12 @@ Now update the `package.js` with build tasks and a path to entry point:
 
 ```json
 {
-  "source": "src/foo.js",          // Your source file (same as 1st arg to microbundle)
-  "main": "dist/foo.js",           // output path for CommonJS/Node
-  "module": "dist/foo.module.js",  // output path for JS Modules
-  "unpkg": "dist/foo.umd.js",      // optional, for unpkg.com
+  "source": "src/foo.js", // Your source file (same as 1st arg to microbundle)
+  "main": "dist/foo.js", // output path for CommonJS/Node
+  "module": "dist/foo.module.js", // output path for JS Modules
+  "unpkg": "dist/foo.umd.js", // optional, for unpkg.com
   "scripts": {
-    "build": "microbundle",        // uses "source" and "main" as input and output paths by default
+    "build": "microbundle", // uses "source" and "main" as input and output paths by default
     "dev": "microbundle watch"
   }
 }
@@ -51,7 +52,7 @@ Now update the `package.js` with build tasks and a path to entry point:
 
 As we indent to support a lot of API endpoints we want our code to scale well if API expands. One of the best ways to do that is to align folders with resource names. For [Dev.to API](https://docs.dev.to/api/) it would look like this:
 
-```
+```bash
 /src
 	/articles
 		index.ts // Everything that's related to articles
@@ -68,15 +69,15 @@ It also useful to keep resources as separate classes, so you don't need to chang
 
 ```js
 function applyMixins(derivedCtor: any, baseCtors: any[]) {
-    baseCtors.forEach(baseCtor => {
-      Object.getOwnPropertyNames(baseCtor.prototype).forEach(name => {
-        Object.defineProperty(
-          derivedCtor.prototype,
-          name,
-          Object.getOwnPropertyDescriptor(baseCtor.prototype, name)
-        );
-      });
-    });
+  baseCtors.forEach(baseCtor => {
+    Object.getOwnPropertyNames(baseCtor.prototype).forEach(name => {
+      Object.defineProperty(
+        derivedCtor.prototype,
+        name,
+        Object.getOwnPropertyDescriptor(baseCtor.prototype, name)
+      )
+    })
+  })
 }
 class DevTo extends Base {}
 interface DevTo extends Articles, Comments, Users {}
@@ -119,19 +120,19 @@ Most of the code in API client is integration with third-party endpoints. To mak
 
 ```js
 describe('Article resource', () => {
-    test('getArticles returns a list of articles', async () => {
-        // Set up the mock request
-        const scope = nock('https://dev.to/api/')
-           .get('/articles')
-           .reply(200, [{ title: 'Article' }])
+  test('getArticles returns a list of articles', async () => {
+    // Set up the mock request
+    const scope = nock('https://dev.to/api/')
+      .get('/articles')
+      .reply(200, [{ title: 'Article' }])
 
-        // Make the request
-        const DevToClient = new DevTo({ apiKey: 'XYZ' })
-        await DevToClient.getArticles()
+    // Make the request
+    const DevToClient = new DevTo({ apiKey: 'XYZ' })
+    await DevToClient.getArticles()
 
-        // Assert that the expected request was made.
-        scope.done()
-    })
+    // Assert that the expected request was made.
+    scope.done()
+  })
 })
 ```
 
@@ -140,6 +141,5 @@ In the example above we set up the mock, then make the request and finally check
 ## Conclusion
 
 Together we designed an API client that is small, scalable, supports Typescript out-of-the-box, and works in browser and in Node.js.
-
 
 I invite everyone to check out the [repository](https://github.com/ilyamkin/dev-to-js) to collaborate and improve the library. If you ever wanted to be a maintainer of an open-source library, this is something I'd be open to help.

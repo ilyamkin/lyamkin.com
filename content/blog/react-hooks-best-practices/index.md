@@ -1,6 +1,6 @@
 ---
 title: Adventuring Into React Hooks Performance Practices
-date: "2019-10-18T00:00:00.000Z"
+date: '2019-10-18T00:00:00.000Z'
 ---
 
 From version 16.8.0, React introduced us to a way to use state and other React features without writing a class — [React Hooks](kcd-scripts validate).
@@ -10,6 +10,7 @@ It’s an amazing improvement around [the classic Class paradigm](https://reactj
 Let’s deep dive into the most popular ones and try to figure out how to avoid them.
 
 ## Re-Renders Matter
+
 Alright, we identified that we may encounter some performance issues while using Hooks, but where are they coming from?
 
 Essentially, most of the issues with Hooks come from unnecessary renders of your components. Have a look at the following example:
@@ -18,9 +19,9 @@ https://codesandbox.io/s/incrementor-46w3y?fontsize=14&hidenavigation=1&theme=da
 
 This is a component that has two states, A and B, and four increment actions on them. I’ve added the `console.log` method to see the message on every render. The first two actions are basic increments and just increase A or B values by one.
 
-Let’s click on the *a++*, *b++* button and have a look at the console: on each click, there should be only one render. This is really good because that’s what we wanted.
+Let’s click on the _a++_, _b++_ button and have a look at the console: on each click, there should be only one render. This is really good because that’s what we wanted.
 
-Now press the *a++, b++ after 1s* button: on each click, you’d see two renders. If you’re wondering what’s happening underneath — the answer is simple.
+Now press the _a++, b++ after 1s_ button: on each click, you’d see two renders. If you’re wondering what’s happening underneath — the answer is simple.
 React batches synchronous state updates into one.
 
 On the other hand, for asynchronous functions, each `setState` function triggers a render method.
@@ -39,6 +40,7 @@ It allows you to separate state logic from components and helps you to avoid bug
 Trust me on that, I have seen so many people forgetting to set `isLoading: false` on error.
 
 ## Custom Hooks
+
 Now that we’ve figured out how to manage `useState` in a single component, let’s move increment functionality outside to be used in different places.
 
 ```jsx
@@ -56,7 +58,7 @@ const ExampleWithCustomHook = () => {
   }, [incrementA])
 
   console.log('Re-rendered')
-  
+
   return <h1>{a}</h1>
 }
 ```
@@ -73,24 +75,24 @@ The component above is always re-rendering because the increment Hook returns a 
 
 ```jsx
 const useIncrement = (defaultValue = 0) => {
-  const [value, setValue] = useState(defaultValue);
+  const [value, setValue] = useState(defaultValue)
 
-  const increment = useCallback(() => setValue(value => value + 1), []);
+  const increment = useCallback(() => setValue(value => value + 1), [])
 
-  return [value, increment];
-};
+  return [value, increment]
+}
 
 const ExampleWithCustomHook = () => {
-  const [a, incrementA] = useIncrement();
+  const [a, incrementA] = useIncrement()
 
   useEffect(() => {
-    incrementA();
-  }, [incrementA]);
+    incrementA()
+  }, [incrementA])
 
-  console.log("Re-rendered");
+  console.log('Re-rendered')
 
-  return <h1>{a}</h1>;
-};
+  return <h1>{a}</h1>
+}
 ```
 
 Now it’s safe to use this Hook.

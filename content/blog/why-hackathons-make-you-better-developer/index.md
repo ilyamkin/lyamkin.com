@@ -1,6 +1,6 @@
 ---
 title: Why Hackathons Make You a Better Developer
-date: "2019-11-30T00:00:00.000Z"
+date: '2019-11-30T00:00:00.000Z'
 ---
 
 Over the course of my life, I’ve participated in more than 20 hackathons, so I might be a little biased on them, but on the other hand, I know a lot about how they can be useful.
@@ -19,7 +19,7 @@ If you’re wondering why it’s that important, the reason is that you’ll kno
 
 ## Learning how to estimate your efforts better
 
-Due to the limited time, proper estimation is essential for your success. If your estimation is incorrect, you won’t be able to achieve what you planned in time. 
+Due to the limited time, proper estimation is essential for your success. If your estimation is incorrect, you won’t be able to achieve what you planned in time.
 
 The truth is, at a hackathon, you’ll notice that your estimations are far from perfect. Use this fact to your advantage and adjust your estimations so that it doesn’t happen at work.
 

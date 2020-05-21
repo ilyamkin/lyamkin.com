@@ -1,6 +1,6 @@
 ---
 title: Farewell, FREE NOW
-date: "2020-03-27T00:00:00.000Z"
+date: '2020-03-27T00:00:00.000Z'
 ---
 
 Today is my last day at FREE NOW. It's a bittersweet moment, but I believe it's the right thing to do.

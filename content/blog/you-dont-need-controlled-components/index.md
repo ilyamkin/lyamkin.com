@@ -1,6 +1,6 @@
 ---
 title: You Might Not Need Controlled Components
-date: "2019-10-01T00:00:00.000Z"
+date: '2019-10-01T00:00:00.000Z'
 ---
 
 If you'll go to the official React website it says that [the recommended way to use inputs is to control them via React state](https://reactjs.org/docs/uncontrolled-components.html). It also mentions that in some cases you can go with an uncontrolled option but do not say what are these cases explicitly. Let’s try to dive into it and see the pros and cons of this approach.
@@ -13,16 +13,23 @@ Controlled input values are being kept in the local state. Every time the user c
 const SimpleControlledForm = () => {
   const [email, setEmail] = useState('')
   const [name, setName] = useState('')
-  
-  const onSubmit = useCallback((e) => {
-    e.preventDefault()
-    sendData({ email, name })
-  }, [email, name])
-  
+
+  const onSubmit = useCallback(
+    e => {
+      e.preventDefault()
+      sendData({ email, name })
+    },
+    [email, name]
+  )
+
   return (
     <form onSubmit={onSubmit}>
-      <input name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-      <input name="name" value={name} onChange={(e) => setName(e.target.value)} />
+      <input
+        name="email"
+        value={email}
+        onChange={e => setEmail(e.target.value)}
+      />
+      <input name="name" value={name} onChange={e => setName(e.target.value)} />
       <button type="submit">Submit</button>
     </form>
   )
@@ -65,15 +72,13 @@ Use refs. With new Hooks API, refs became a more stable and better way to contro
 ```jsx
 const SimpleUncontrolledForm = () => {
   const form = useRef()
-  const onSubmit = useCallback(
-    e => {
-      e.preventDefault()
-      const { email, name } = e.target
-      sendData({ email: email.value, name: name.value })
-      e.target.reset()
-    }, []
-  )
-  
+  const onSubmit = useCallback(e => {
+    e.preventDefault()
+    const { email, name } = e.target
+    sendData({ email: email.value, name: name.value })
+    e.target.reset()
+  }, [])
+
   const sendValues = () => {
     const { email, name } = form.current
     sendData({ email: email.value, name: name.value })
@@ -95,6 +100,7 @@ const SimpleUncontrolledForm = () => {
 ## Embrace HTML5
 
 Browser API provides you with a lot of useful features to handle forms and inputs.
+
 - [`form.reset()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/reset) — use the reset function to clear all your fields
 - [`form.submit()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit) — use it to programmatically submit the form
 - [`form.reportValidity()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/reportValidity) — checks validation constraints and returns `true` or `false`
