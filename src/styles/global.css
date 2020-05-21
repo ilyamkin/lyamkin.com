@@ -1,5 +1,157 @@
 @tailwind utilities;
 
+html {
+    font: 100%/1.75 'Merriweather','Georgia',serif;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
 html, body, #___gatsby, #gatsby-focus-wrapper {
     height: 100%;
+}
+
+body {
+    font-family: "Merriweather", "Georgia", "serif";
+    color: hsla(0,0%,0%,0.9);
+    font-weight: 400;
+    margin: 0;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+p {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    margin-bottom: 1.75rem;
+}
+
+img {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    margin-bottom: 1.75rem;
+}
+
+ul {
+    margin-left: 1.75rem;
+    margin-right: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    margin-bottom: 1.75rem;
+    list-style-position: outside;
+    list-style-image: none;
+    list-style: disc;
+}
+
+b, strong {
+    font-weight: 700;
+}
+
+h1 {
+    font-family: "Montserrat", "sans-serif";
+    font-size: 2.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.75rem;
+}
+
+li {
+    margin-bottom: calc(1.75rem / 2);
+}
+
+small {
+    font-size: 80%;
+}
+
+hr {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    margin-bottom: calc(1.75rem - 1px);
+    background: hsla(0,0%,0%,0.2);
+    border: none;
+    height: 1px;
+}
+
+h2 {
+    font-size: 1.73286rem;
+    line-height: 1.1;
+    margin-bottom: 1.75rem;
+}
+
+h3 {
+    font-size: 1.4427rem;
+    line-height: 1.1;
+}
+
+blockquote {
+    color: gray;
+    font-style: italic;
+    padding-left: 13px;
+    margin-left: -1.75rem;
+    border-left: 3px solid gray;
+}
+
+blockquote > :last-child {
+    margin-bottom: 0;
+}
+
+blockquote cite {
+    font-size: 1rem;
+    color: hsla(0,0%,0%,0.9);
+    font-weight: 400;
+}
+
+blockquote cite:before {
+    content: '— ';
+}
+
+ul {
+    list-style: disc;
+}
+  
+ul, ol {
+    margin-left: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 3.5rem;
+    font-weight: 900;
+}
+
+h4 {
+    letter-spacing: 0.140625em;
+    text-transform: uppercase;
+}
+
+h6 {
+    font-style: italic;
+}
+
+a {
+    box-shadow: 0 1px 0 0 currentColor;
+    color: #007acc;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    box-shadow: none;
 }
