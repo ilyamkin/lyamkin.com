@@ -3,3 +3,21 @@
 html, body, #___gatsby, #gatsby-focus-wrapper {
     height: 100%;
 }
+
+.gatsby-resp-image-figcaption {
+    text-align: center;
+    font-size: 0.83255rem;
+    color: hsla(0,0%,0%,0.59);
+}
+
+.image-left {
+    float: left;
+    width: 100%;
+    margin-right: 1rem;
+}
+
+@media (min-width: 640px) {
+    .image-left {
+        width: 50%;
+    }
+}

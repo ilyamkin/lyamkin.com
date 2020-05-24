@@ -2,11 +2,9 @@
 title: How to Build an API Client Library in JS
 date: '2020-04-27T00:00:00.000Z'
 description: Introducing the dev-to-js library
+featuredImage: cover-dev-to-js.png
+featuredImageAlt: dev-to-js
 ---
-
-<div align="center">
-<img src="https://i.imgur.com/HzCCU11.png" width="250"/>
-</div>
 
 Every time I find myself connecting to a third-party API that doesn't have a client library I have to create a lot of boilerplate around it:
 

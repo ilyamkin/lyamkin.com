@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -16,6 +17,8 @@ class BlogPostTemplate extends React.Component {
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
+          image={post.frontmatter.featuredImage && post.frontmatter.featuredImage.childImageSharp.fluid.src}
+          isArticle
         />
         <article>
           <header>
@@ -37,6 +40,13 @@ class BlogPostTemplate extends React.Component {
               {post.frontmatter.date}
             </p>
           </header>
+          {post.frontmatter.featuredImage && <Img
+            fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
+            alt={post.frontmatter.featuredImageAlt}
+            style={{
+              marginBottom: '1.75rem',
+            }}
+          />}
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
             style={{
@@ -94,6 +104,14 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        featuredImageAlt
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }
