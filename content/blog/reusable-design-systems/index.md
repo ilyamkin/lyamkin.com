@@ -2,6 +2,8 @@
 title: Truly Reusable Design Systems in Practice
 date: '2020-01-02T00:00:00.000Z'
 description: What makes a great design system — and how can you create your own for your project or company?
+featuredImage: design-systems.jpg
+featuredImageAlt: Truly Reusable Design Systems in Practice
 ---
 
 Companies like Airbnb, Apple, Uber, and GitHub have changed the ways they design digital products by incorporating their design language and organizing it into a system that can be used across all employees — and even outside of the company.

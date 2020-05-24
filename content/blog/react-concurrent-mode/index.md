@@ -2,6 +2,8 @@
 title: Implementing the Prefetch Pattern in React Concurrent Mode
 date: '2019-11-04T00:00:00.000Z'
 description: What is React Concurrent Mode and how it can help building responsive webapps
+featuredImage: react-concurrent-mode.jpg
+featuredImageAlt: Implementing the Prefetch Pattern in React Concurrent Mode
 ---
 
 Recently, React announced a feature of the React ecosystem — [Concurrent Mode](https://reactjs.org/docs/concurrent-mode-intro.html). This would allow us to stop or delay the execution of components for the time that we need. It’ll help React apps stay responsive and gracefully adjust to the user’s device capabilities and network speed.

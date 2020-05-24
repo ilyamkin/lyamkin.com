@@ -1,6 +1,8 @@
 ---
 title: Why Hackathons Make You a Better Developer
 date: '2019-11-30T00:00:00.000Z'
+featuredImage: why-hackathons-make-you-a-better-developer.jpg
+featuredImageAlt: Why Hackathons Make You a Better Developer
 ---
 
 Over the course of my life, I’ve participated in more than 20 hackathons, so I might be a little biased on them, but on the other hand, I know a lot about how they can be useful.

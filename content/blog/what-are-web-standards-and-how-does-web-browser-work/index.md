@@ -2,14 +2,14 @@
 title: What are Web Standards and how does Web Browser work?
 date: '2020-05-24T00:00:00.000Z'
 description: Introduction to Web Standards and Web Browser implementation
-featuredImage: web-standards-and-web-browser-implementation.png
+featuredImage: web-standards-and-web-browser-implementation.jpg
 featuredImageAlt: Introduction to Web Standards and Web Browser implementation
 ---
 
 Let me tell you a story. Once I was building yet another date picker component for our design system. It consists of text input and pop-up with a calendar that shows by clicking on it. Then pop-up can be closed on click outside or if the date was selected.
 
 <div class="image-left">
-    <img alt="Date picker component" src="./date-picker.png" />
+    <img alt="Date picker component" src="./date-picker.jpg" />
 </div>
 
 Most implementations of the click outside logic made with actual click listeners attached to the DOM. However, I wanted to build our date picker accessible, so you could open a calendar with tabs and close the same way.  Additionally, click listeners may conflict with each other if you put several date pickers on the page.
@@ -88,7 +88,7 @@ Now we have a little overview of what Blink does and how rendering pipeline look
 
 It seems like we are finally at the finish line. Let's open the [Blink repository](https://chromium.googlesource.com/chromium/blink/+/master/Source) and look around.
 
-![The root folder of Blink repository](root-folder.png)
+![The root folder of Blink repository](root-folder.jpg)
 
 We can quickly realize that even though we narrowed down a lot from our original question,  it's still too big to manually find a specific line of code responsible for preventing focus. 
 
