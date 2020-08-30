@@ -17,7 +17,10 @@ class BlogPostTemplate extends React.Component {
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
-          image={post.frontmatter.featuredImage && post.frontmatter.featuredImage.childImageSharp.fluid.src}
+          image={
+            post.frontmatter.featuredImage &&
+            post.frontmatter.featuredImage.childImageSharp.fluid.src
+          }
           isArticle
         />
         <article>
@@ -40,13 +43,15 @@ class BlogPostTemplate extends React.Component {
               {post.frontmatter.date}
             </p>
           </header>
-          {post.frontmatter.featuredImage && <Img
-            fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
-            alt={post.frontmatter.featuredImageAlt}
-            style={{
-              marginBottom: '1.75rem',
-            }}
-          />}
+          {post.frontmatter.featuredImage && (
+            <Img
+              fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
+              alt={post.frontmatter.featuredImageAlt}
+              style={{
+                marginBottom: '1.75rem',
+              }}
+            />
+          )}
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
             style={{

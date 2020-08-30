@@ -12,7 +12,7 @@ Let me tell you a story. Once I was building yet another date picker component f
     <img alt="Date picker component" src="./date-picker.jpg" />
 </div>
 
-Most implementations of the click outside logic made with actual click listeners attached to the DOM. However, I wanted to build our date picker accessible, so you could open a calendar with tabs and close the same way.  Additionally, click listeners may conflict with each other if you put several date pickers on the page.
+Most implementations of the click outside logic made with actual click listeners attached to the DOM. However, I wanted to build our date picker accessible, so you could open a calendar with tabs and close the same way. Additionally, click listeners may conflict with each other if you put several date pickers on the page.
 
 What if you could just rely on native focus and blur events instead of detecting clicks outside? They naturally support tabs, touch and click events, and already implemented in the browser. The only problem you need to solve in this case is when you click on the pop-up but without date selection: focus shifts to the calendar, triggering blur event on the text input and eventually closing the pop-up.
 
@@ -54,7 +54,7 @@ Let's briefly go over them to get the idea of how it works together.
 
 - **blink**: it's a rendering engine that responsible for the whole rendering pipeline including DOM trees, styles, events, V8 integration.
 
-- **v8**: a final big part of a browser - Javascript engine. Its job is to compile JavaScript to native machine code. 
+- **v8**: a final big part of a browser - Javascript engine. Its job is to compile JavaScript to native machine code.
 
 As you can see browser consist of several independent parts that talk to each other via API. The most interesting parts for developers are usually Blink and V8. Browser defined default actions are not part of V8, but Blink should have all of them defined and implemented. But before we jump into the Blink codebase, let's understand how web browsers work from a user point of view.
 
@@ -90,7 +90,7 @@ It seems like we are finally at the finish line. Let's open the [Blink repositor
 
 ![The root folder of Blink repository](root-folder.jpg)
 
-We can quickly realize that even though we narrowed down a lot from our original question,  it's still too big to manually find a specific line of code responsible for preventing focus. 
+We can quickly realize that even though we narrowed down a lot from our original question, it's still too big to manually find a specific line of code responsible for preventing focus.
 
 Let's try to search by our event name in Google:
 

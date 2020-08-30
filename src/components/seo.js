@@ -79,7 +79,7 @@ function SEO({ description, lang, meta, title, image, isArticle }) {
         {
           name: `twitter:image`,
           content: `${site.siteMetadata.siteUrl}${image}`,
-        }
+        },
       ].concat(meta)}
     />
   )
