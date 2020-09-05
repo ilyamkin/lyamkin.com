@@ -17,9 +17,6 @@ const Layout = ({ title, children }) => (
         <Link className="mr-4" to={`/about`}>
           About
         </Link>
-        <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-          CV
-        </a>
       </div>
     </header>
     <main className="px-8 flex-1 mx-auto w-full" style={{ maxWidth: '744px' }}>
