@@ -35,6 +35,14 @@ class NotFoundPage extends React.Component {
           fault-tolerant services that support unique exponential growth
           requirements. I've written code for{' '}
           <a
+            href="https://spotify.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Spotify
+          </a>
+          ,{' '}
+          <a
             href="https://free-now.com/"
             target="_blank"
             rel="noopener noreferrer"
