@@ -59,7 +59,44 @@ class BlogPostTemplate extends React.Component {
             }}
           />
         </article>
-
+        <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+        <form
+          action="https://app.convertkit.com/forms/1418889/subscriptions"
+          method="post"
+          target="_self"
+          data-sv-form={1418889}
+          className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+        >
+          <div className="font-bold text-xl">I've got more coming...</div>
+          <div className="mb-3">
+            Subscribe to get my latest content by email.
+          </div>
+          <input
+            type="text"
+            name="fields[first_name]"
+            placeholder="Your first name"
+            aria-label="Your first name"
+            id="ck-first-name"
+            className="mb-4 border-solid bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
+          />
+          <input
+            className="mb-4 border-solid bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
+            type="email"
+            name="email_address"
+            placeholder="Your email address"
+            aria-label="Your email address"
+            id="ck-email"
+          />
+          <button
+            className="mb-2 border-0 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="submit"
+          >
+            Subscribe
+          </button>
+          <div className="text-center text-gray-500 text-xs">
+            I won’t send you spam. Unsubscribe at any time.
+          </div>
+        </form>
         <nav>
           <ul
             style={{

@@ -16,6 +16,25 @@ html, body, #___gatsby, #gatsby-focus-wrapper {
     margin-right: 1rem;
 }
 
+.formkit-alert-success {
+    color: #234e52;
+    color: rgba(35, 78, 82, 1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+    border-top-width: 4px;
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+    border-color: #38b2ac;
+    border-color: rgba(56, 178, 172, 1);
+    background-color: #e6fffa;
+    background-color: rgba(230, 255, 250, 1);
+}
+
 @media (min-width: 640px) {
     .image-left {
         width: 50%;
