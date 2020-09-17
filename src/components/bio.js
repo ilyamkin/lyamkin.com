@@ -30,7 +30,7 @@ const Bio = () => {
         }}
       />
       <h1 className="name">Ilya Lyamkin</h1>
-      <h2 className="position">Senior Front End Engineer</h2>
+      <h2 className="position">Senior Software Engineer</h2>
       <ul className="social-list">
         <li className="social-item">
           <a
