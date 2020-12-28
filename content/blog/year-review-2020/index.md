@@ -1,7 +1,7 @@
 ---
 title: Year Review 2020
 date: '2020-12-28T00:00:00.000Z'
-featuredImage: farewell-free-now.jpg
+featuredImage: year-review-2020.jpg
 featuredImageAlt: Year Review 2020
 ---
 
