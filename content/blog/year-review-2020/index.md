@@ -41,9 +41,9 @@ Working from home takes from you strict boundaries and goals aligned. You need t
 
 The interviewing process teaches you a lot: you have a chance to overlook the working methods of a diverse set of companies. Make sure that you interview the company as much as they interview you.
 
-## Goals for 2021
+## Values for 2021
 
-Now, the final part — goals for 2021. Let's dive into it!
+Now, the final part — 4 values for 2021. Let's dive into it!
 
 **Create new revenue streams.** I'm soft launching my company called [sourcexperts](https://sourcexperts.com). It's a distributed product development and venture investing studio.
 - If you want to build the best product possible — we will help you.
@@ -52,7 +52,7 @@ Now, the final part — goals for 2021. Let's dive into it!
 
 **Save and invest.** I plan to double down on investing and have by the end of the year $100k invested across different markets to drive future growth.
 
-**Work.** Drive innovation and creative thinking daily within my job at Spotify. We're building a new ambitious project and I want it to succeed.
+**Career.** Drive innovation and creative thinking daily within my job at Spotify. We're building a new ambitious project and I want it to succeed.
 
 **Knowledge sharing.** Write at least 1 article per month about engineering and, maybe, about finance.
 
